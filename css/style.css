@@ -42,6 +42,7 @@ input {
   font-size: 110%;
   display: block;
   margin: 5px;
+  opacity: .8;
 }
 
 input:hover {
