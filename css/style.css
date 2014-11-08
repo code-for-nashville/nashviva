@@ -4,7 +4,7 @@ input {
   width: 150px;
   font-size: 110%;
   display: block;
-  margin: 10
+  margin: 5px;
 }
 
 input:hover {
@@ -30,7 +30,9 @@ input:hover {
 }
 
 body {
-  background-image: ("../images/nashvilleskyline.jpg")
+  background-image: url("../images/nashvilleskyline.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100%;
   width: 100%;
 }
