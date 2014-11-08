@@ -8,6 +8,15 @@
 
   }
 
+  var datasetButtons= ['#fire-station','#police-station','#wifi', '#parks']
+
+  datasetButtons.forEach(function(dataset){
+    $(dataset).click(function(){
+      console.log(this);
+      //add toggle for showing icons on map
+    })
+  });
+
   var map = L.map('map').setView([36.165818, -86.784245], 13);
 
   L.tileLayer( 'http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
