@@ -30,5 +30,7 @@ input:hover {
 }
 
 body {
-  background-image: url(http://www.codefornashville.org/img/header_panorama_logo.jpg)
+  background-image: ("../images/nashvilleskyline.jpg")
+  height: 100%;
+  width: 100%;
 }
