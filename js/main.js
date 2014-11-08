@@ -24,7 +24,8 @@
   var firePoints=[], parksPoints=[], policePoints=[], wifiPoints=[],
     fireMarkers=[], policeMarkers=[], wifiMarkers=[], parksMarkers=[];
   //set up the icons for the markers
-  var fireIcon = new L.Icon({iconUrl:'../images/firestation.png',iconSize:[45,45]}),
+  var fireIcon = new L.Icon({iconUrl:'../images/firestation.png',
+                            iconSize:[45,45]}),
       policeIcon = new L.Icon({iconUrl:'../images/policestation.png',
                               iconSize:[45,45]}),
       wifiIcon = new L.Icon({iconUrl:'../images/wifi.png',iconSize:[45,45]}),
@@ -36,7 +37,8 @@
     subdomains: ['otile1','otile2','otile3','otile4']
 }).addTo( map );
 
-//getting stuff from metro API **placeholder will replace with real data
+//getting stuff from metro API **placeholder will replace with real data**
+//BEGIN PLACEHOLDER DATA CODE
 $.get('https://data.nashville.gov/api/views/frq9-a5iv/rows.json',function(data){
   data.data.forEach(function(location){
     firePoints.push([+location[13][1],+location[13][2]]);
@@ -55,9 +57,10 @@ $.get('https://data.nashville.gov/api/views/4ugp-s85t/rows.json',function(data){
 $.get('https://data.nashville.gov/api/views/74d7-b74t/rows.json',function(data){
   data.data.forEach(function(location){
     if(location[41][1])
-      parksPoints.push([+location[41][1],+location[41][2]]);
+      parksPoints.push([+location[41][1],+location[41][2],location[8]]);
   });
 });
+//END OF PLACEHOLDER DATA CODE
 
 function toggleIcon(type){
   //toggleIcon takes the type of markers we want to toggle
@@ -84,7 +87,10 @@ function toggleIcon(type){
       points.forEach(function(el){
         //for each point, make a new marker and push it into
         //the markers array
-        markers.push(L.marker(el,{icon:icon}).addTo(map));
+        var mark = L.marker(el.slice(0,2),{icon:icon});
+        if(el[2]) {mark.bindPopup('<p>' + el[2] + '</p>');}
+        markers.push(mark.addTo(map));
+        // markers.push(L.marker(el,{icon:icon}).addTo(map));
       });
     }
     //if they already exist, then toggle the opacity to show or
@@ -95,6 +101,7 @@ function toggleIcon(type){
           el.setOpacity(1);
         else
           el.setOpacity(0);
+          el.closePopup();
       });
     }
   }
