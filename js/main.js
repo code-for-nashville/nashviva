@@ -22,8 +22,13 @@
   //varables for the map. points are latitude and longitude points
   //markers are leaflet markers
   var firePoints=[], parksPoints=[], policePoints=[], wifiPoints=[],
-    fireMarkers=[], policeMarkers=[], wifiMarkers=[], parksMarkers=[],
-    defaultIcon = new L.Icon.Default();
+    fireMarkers=[], policeMarkers=[], wifiMarkers=[], parksMarkers=[];
+  //set up the icons for the markers
+  var fireIcon = new L.Icon({iconUrl:'../images/firestation.png',iconSize:[45,45]}),
+      policeIcon = new L.Icon({iconUrl:'../images/policestation.png',
+                              iconSize:[45,45]}),
+      wifiIcon = new L.Icon({iconUrl:'../images/wifi.png',iconSize:[45,45]}),
+      parksIcon = new L.Icon({iconUrl:'../images/park.png',iconSize:[45,45]});
 
   //create the layer for the map from MapQuest
   L.tileLayer( 'http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
@@ -60,16 +65,16 @@ function toggleIcon(type){
   //whether they are showing or not
   switch(type){
     case 'fire-station':
-      setMarkersFor(firePoints,fireMarkers);
+      setMarkersFor(firePoints,fireMarkers,fireIcon);
       break;
     case 'police-station':
-      setMarkersFor(policePoints,policeMarkers);
+      setMarkersFor(policePoints,policeMarkers,policeIcon);
       break;
     case 'wifi':
-      setMarkersFor(wifiPoints,wifiMarkers);
+      setMarkersFor(wifiPoints,wifiMarkers,wifiIcon);
       break;
     case 'parks':
-      setMarkersFor(parksPoints,parksMarkers);
+      setMarkersFor(parksPoints,parksMarkers,parksIcon);
       break;
   }
   function setMarkersFor(points, markers, icon){
@@ -79,7 +84,7 @@ function toggleIcon(type){
       points.forEach(function(el){
         //for each point, make a new marker and push it into
         //the markers array
-        markers.push(L.marker(el,{icon:defaultIcon}).addTo(map));
+        markers.push(L.marker(el,{icon:icon}).addTo(map));
       });
     }
     //if they already exist, then toggle the opacity to show or
@@ -87,7 +92,7 @@ function toggleIcon(type){
     else{
       markers.forEach(function(el){
         if(el.options.opacity === 0)
-          el.setOpacity(1.0);
+          el.setOpacity(1);
         else
           el.setOpacity(0);
       });
