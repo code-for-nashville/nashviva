@@ -14,17 +14,18 @@
     $(dataset).click(function(){
       console.log(this);
       //add toggle for showing icons on map
-      toggleHeat($(this).attr('id'));
+      toggleIcon($(this).attr('id'));
     });
   });
 
   var map = L.map('map').setView([36.165818, -86.784245], 13);
-  var firePoints=[],
-    parksPoints=[],
-    policePoints=[],
-    wifiPoints=[];
-  var heat = L.heatLayer([],{max:0.3,radius:110}).addTo(map);
+  //varables for the map. points are latitude and longitude points
+  //markers are leaflet markers
+  var firePoints=[], parksPoints=[], policePoints=[], wifiPoints=[],
+    fireMarkers=[], policeMarkers=[], wifiMarkers=[], parksMarkers=[],
+    defaultIcon = new L.Icon.Default();
 
+  //create the layer for the map from MapQuest
   L.tileLayer( 'http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright" title="OpenStreetMap" target="_blank">OpenStreetMap</a> contributors | Tiles Courtesy of <a href="http://www.mapquest.com/" title="MapQuest" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png" width="16" height="16">',
     subdomains: ['otile1','otile2','otile3','otile4']
@@ -53,25 +54,44 @@ $.get('https://data.nashville.gov/api/views/74d7-b74t/rows.json',function(data){
   });
 });
 
-function toggleHeat(type){
+function toggleIcon(type){
+  //toggleIcon takes the type of markers we want to toggle
+  //and creates the markers if they don't exist and toggles
+  //whether they are showing or not
   switch(type){
     case 'fire-station':
-      heat.setLatLngs(firePoints);
-      heat.redraw();
+      setMarkersFor(firePoints,fireMarkers);
       break;
     case 'police-station':
-      heat.setLatLngs(policePoints);
-      heat.redraw();
+      setMarkersFor(policePoints,policeMarkers);
       break;
     case 'wifi':
-      heat.setLatLngs(wifiPoints);
-      heat.redraw();
+      setMarkersFor(wifiPoints,wifiMarkers);
       break;
     case 'parks':
-      heat.setLatLngs(parksPoints);
-      heat.redraw();
+      setMarkersFor(parksPoints,parksMarkers);
       break;
-
+  }
+  function setMarkersFor(points, markers, icon){
+    //set markers makes the array of leaflet markers if
+    //they do not exist
+    if(!markers[0]){
+      points.forEach(function(el){
+        //for each point, make a new marker and push it into
+        //the markers array
+        markers.push(L.marker(el,{icon:defaultIcon}).addTo(map));
+      });
+    }
+    //if they already exist, then toggle the opacity to show or
+    //hide the markers
+    else{
+      markers.forEach(function(el){
+        if(el.options.opacity === 0)
+          el.setOpacity(1.0);
+        else
+          el.setOpacity(0);
+      });
+    }
   }
 }
 
