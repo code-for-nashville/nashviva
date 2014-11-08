@@ -1,15 +1,24 @@
+#logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
 
 body {
   background-image: url("../images/nashvilleskyline.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   height: 100%;
   width: 100%;
 }
 
 /* --- map --- */
 #map {
-  height:720px;
+  height:500px;
+  width: 700px;
 }
 
 .data-map {
@@ -56,8 +65,3 @@ input:hover {
 #parks {
   background-color: darkgreen;
 }
-
-
-
-
-
