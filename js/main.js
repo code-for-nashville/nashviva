@@ -15,6 +15,4 @@
     subdomains: ['otile1','otile2','otile3','otile4']
 }).addTo( map );
 
-  var marker = L.marker([51.5, -0.09]).addTo(map);
-
 })();
