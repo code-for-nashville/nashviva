@@ -10,13 +10,15 @@ body {
   background-image: url("../images/nashvilleskyline.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   height: 100%;
   width: 100%;
 }
 
 /* --- map --- */
 #map {
-  height:720px;
+  height:500px;
+  width: 700px;
 }
 
 .data-map {
