@@ -1,0 +1,26 @@
+input {
+  border-radius: 5px;
+  height: 50px;
+  width: 150px;
+  font-size: 110%;
+}
+
+input:hover {
+  border-color: black;
+}
+
+#police-station {
+  background-color: steelblue;
+}
+
+#fire-station {
+  background-color: red;
+}
+
+#wifi {
+  background-color: lightgreen;
+}
+
+#parks {
+  background-color: darkgreen;
+}
