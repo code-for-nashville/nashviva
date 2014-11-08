@@ -1,5 +1,30 @@
+
+body {
+  background-image: url("../images/nashvilleskyline.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- map --- */
 #map {
   height:720px;
+}
+
+.data-map {
+  width: 80%;
+  float: right;
+  clear: right;
+}
+
+/* --- data buttons --- */
+
+.data-toggle {
+  width: 20%;
+  float: left;
+  clear: left;
+}
 
 input {
   border-radius: 5px;
@@ -32,10 +57,7 @@ input:hover {
   background-color: darkgreen;
 }
 
-body {
-  background-image: url("../images/nashvilleskyline.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 100%;
-  width: 100%;
-}
+
+
+
+
