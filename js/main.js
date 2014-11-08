@@ -37,30 +37,28 @@
     subdomains: ['otile1','otile2','otile3','otile4']
 }).addTo( map );
 
-//getting stuff from metro API **placeholder will replace with real data**
-//BEGIN PLACEHOLDER DATA CODE
-$.get('https://data.nashville.gov/api/views/frq9-a5iv/rows.json',function(data){
-  data.data.forEach(function(location){
-    firePoints.push([+location[13][1],+location[13][2]]);
+//Convert our JSON files into latitude longitude points in the "Points"
+//variables
+$.get('../firestation-cleaned.json',function(data){
+  data.forEach(function(loc){
+    firePoints.push([+loc.location[1],+loc.location[0]]);
   });
 });
-$.get('https://data.nashville.gov/api/views/y5ik-ut5s/rows.json',function(data){
-  data.data.forEach(function(location){
-    policePoints.push([+location[16][1],+location[16][2]]);
+$.get('../police-cleaned.json',function(data){
+  data.forEach(function(loc){
+    policePoints.push([+loc.location[1],+loc.location[0]]);
   });
 });
-$.get('https://data.nashville.gov/api/views/4ugp-s85t/rows.json',function(data){
-  data.data.forEach(function(location){
-    wifiPoints.push([+location[11][1],+location[11][2]]);
+$.get('../hotspot-cleaned.json', function(data){
+  data.forEach(function(loc){
+    wifiPoints.push([+loc.location[1],+loc.location[0]]);
   });
 });
-$.get('https://data.nashville.gov/api/views/74d7-b74t/rows.json',function(data){
-  data.data.forEach(function(location){
-    if(location[41][1])
-      parksPoints.push([+location[41][1],+location[41][2],location[8]]);
+$.get('../parks-cleaned.json',function(data){
+  data.forEach(function(loc){
+    parksPoints.push([+loc.location[0],+loc.location[1],loc.name]);
   });
 });
-//END OF PLACEHOLDER DATA CODE
 
 function toggleIcon(type){
   //toggleIcon takes the type of markers we want to toggle
