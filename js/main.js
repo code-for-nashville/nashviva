@@ -79,6 +79,9 @@ function toggleIcon(type){
     case 'parks':
       setMarkersFor(parksPoints,parksMarkers,parksIcon);
       break;
+    case 'recycling':
+      // setMarkersFor(recyclingPoints, recyclingMarkers, recyclingIcon);
+      break;
   }
   function setMarkersFor(points, markers, icon){
     //set markers makes the array of leaflet markers if
@@ -90,7 +93,6 @@ function toggleIcon(type){
         var mark = L.marker(el.slice(0,2),{icon:icon});
         if(el[2]) {mark.bindPopup('<p>' + el[2] + '</p>');}
         markers.push(mark.addTo(map));
-        // markers.push(L.marker(el,{icon:icon}).addTo(map));
       });
     }
     //if they already exist, then toggle the opacity to show or
