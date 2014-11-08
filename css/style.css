@@ -6,10 +6,14 @@ input {
   height: 50px;
   width: 150px;
   font-size: 110%;
+  display: block;
+  margin: 5px;
 }
 
 input:hover {
   border-color: black;
+  height: 60px;
+  width: 160px
 }
 
 #police-station {
@@ -26,4 +30,12 @@ input:hover {
 
 #parks {
   background-color: darkgreen;
+}
+
+body {
+  background-image: url("../images/nashvilleskyline.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
 }
