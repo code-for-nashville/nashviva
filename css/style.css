@@ -7,14 +7,25 @@
 
 }
 
+header {
+	position:relative;
+}
+
+#skyline img {
+  display: block;
+  max-width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+}
+
 #title{
+  background: url("../images/swirl_pattern.png");
   z-index: 100;
-  position: absolute;
+  /*position: absolute;
   left: 25%;
-  top: 25%;
+  top: 160px; */
   text-align: center;
-  color: #0000CC;
-  padding: 20px;
+  color: black;
   font-size: 350%;
   font-family: 'Asset', cursive;
   text-shadow:
@@ -38,17 +49,25 @@
 
 
 body {
-  background-image: url("../images/swirl_pattern.png");
+  background: white;
   background-attachment: fixed;
-  background-color: #D8D8D8;
   height: 100%;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- main section --- */
+.data-cols {
+  padding: 0 10px;
+  background: rgba(231,230,225,0.5);
 }
 
 /* --- map --- */
 #map {
   height:500px;
   width: 700px;
+  margin: 10px auto;
 }
 
 .data-map {
@@ -124,4 +143,23 @@ input.switch:checked + label:after
 input {
   display: block;
   clear: left;
+}
+
+/* --- clearfic hack --- */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
 }

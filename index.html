@@ -8,26 +8,28 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   </head>
   <body>
-    <div id="container">
-      <div id='title'>NashViva!</div>
-      <div id='skyline'><img src='images/skyline.png'/></div>
+    <header>
+        <div id='skyline'>
+          <img src='images/skyline.png'/>
+        </div>
+        <div id='title'>NashViva!</div>
+    </header>
+    <section class="data-cols cf">
       <div class="data-toggle">
-        <input type="checkbox" id='fire-station' name="fire-station" class="switch">
-          <label for="fire-station">Fire Stations</label>
+      <input type="checkbox" id='fire-station' name="fire-station" class="switch">
+        <label for="fire-station">Fire Stations</label>
         <input type="checkbox" id="police-station" class="switch" name="police=station"/>
-          <label for="police-station">Police Stations</label>
+        <label for="police-station">Police Stations</label>
         <input type="checkbox" id='wifi' name="wifi" class="switch"/>
-          <label for="wifi">Wi-fi</label>
+        <label for="wifi">Wi-fi</label>
         <input type="checkbox" id="parks" name="parks" class="switch"/>
-	         <label for="parks">Parks</label>
-     </div>
+        <label for="parks">Parks</label>
+      </div>
 
-      <div class="data-map">
-       <div id="map"></div>
-    </div>
-    </div>
-
-
+        <div class="data-map">
+          <div id="map"></div>
+      </div>
+    </section>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   <script src="js/leaflet-heat.js"></script>
