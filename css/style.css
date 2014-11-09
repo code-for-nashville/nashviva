@@ -1,11 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Asset);
 
+* {
+  box-sizing: border-box; 
+  } 
+
+li {
+  list-style-type: none;
+}
+
+
 #skyline{
   left: 0;
   top: 0;
   width: 100%;
-
 }
+
+
 
 header {
 	position:relative;
@@ -76,8 +86,9 @@ body {
   float: right;
 }
 
+
 .data-map {
-  width: 80%;
+  width: 70%;
   float: right;
   clear: right;
   /*box-shadow: 1px 1px; fix box shadow*/
@@ -85,8 +96,12 @@ body {
 
 /* --- data buttons --- */
 
+.nav-btn {
+  display: none;
+}
+
 .data-toggle {
-  width: 20%;
+  width: 30%;
   float: left;
   clear: left;
   font-weight: bold;
@@ -167,4 +182,94 @@ input {
  */
 .cf {
     *zoom: 1;
+}
+
+@media screen and (max-width: 1050px) {
+  .data-map{
+    width: 50%;
+  }
+
+  .data-toggle{
+    width: 50%;
+  }
+
+  #map {
+    height: 400px;
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  #map-img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+
+  .data-map{
+    width: 100%;
+    clear: both;
+  }
+
+  .leaflet-container {
+  float: none!important;
+  margin: 0 auto;
+}
+
+  .data-toggle {
+    width: 100%;
+    clear: both;
+  }
+
+  .nav-btn {
+    display: block;
+    color: black;
+    font-size: 2em;
+    text-align: center;
+    padding: 5px 0;
+    cursor: pointer;
+  }
+  
+ .nav-btn:before {
+   content: "Ammenities";
+ }
+
+
+ .data-toggle ul {
+    display: none;    
+    clear:both;
+    position: relative;
+    padding:0;
+ }
+
+ .data-toggle li {
+    display: block;
+    text-align: center;
+    padding-bottom: 1em;
+  }
+
+ .data-toggle ul li{
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .data-toggle input {
+    margin 0 auto;
+  }
+
+  #title {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 600px){
+  #title {
+    font-size: 2em;
+  }
+
+  #map {
+    height: 300px;
+    width: 400px;
+    margin: 0 auto;
+  }
 }
