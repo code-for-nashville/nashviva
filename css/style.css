@@ -33,36 +33,63 @@ body {
   width: 20%;
   float: left;
   clear: left;
+  font-weight: bold;
+}
+
+input.switch:empty /*takes away the checkboxes in toggle switch */
+{
+	margin-left: -999px;
+}
+
+input.switch:empty ~ label /*styles the label*/
+{
+	position: relative;
+	float: left;
+  font-size: 120%;
+	line-height: 2em;
+	text-indent: 4em;
+	margin: 0.2em 0;
+	cursor: pointer;
+}
+
+input.switch:empty ~ label:before, /*styles the switch */
+input.switch:empty ~ label:after
+{
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	content: '';
+	width: 3.6em;
+	background-color: #c33;
+	border-radius: 0.3em;
+	box-shadow: inset 0 0.2em 0 rgba(0,0,0,0.3);
+	-webkit-transition: all 100ms ease-in;
+	transition: all 100ms ease-in;
+}
+
+input.switch:empty ~ label:after /*styles the white box inside the switch */
+{
+	width: 1.4em;
+	top: 0.1em;
+	bottom: 0.1em;
+	margin-left: 0.1em;
+	background-color: #fff;
+	border-radius: 0.15em;
+	box-shadow: inset 0 -0.2em 0 rgba(0,0,0,0.2);
+}
+
+input.switch:checked + label:before /*styles checked box */
+{
+	background-color: #393;
+}
+
+input.switch:checked + label:after
+{
+	margin-left: 2em;
 }
 
 input {
-  border-radius: 5px;
-  height: 50px;
-  width: 150px;
-  font-size: 110%;
   display: block;
-  margin: 5px;
-  opacity: .8;
-}
-
-input:hover {
-  border-color: black;
-  height: 60px;
-  width: 160px
-}
-
-#police-station {
-  background-color: steelblue;
-}
-
-#fire-station {
-  background-color: red;
-}
-
-#wifi {
-  background-color: lightgreen;
-}
-
-#parks {
-  background-color: darkgreen;
 }
