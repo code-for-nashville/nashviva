@@ -27,10 +27,8 @@
 
 
 body {
-  background-image: url("../images/nashvilleskyline.jpg");
-  background-repeat: no-repeat;
+  background-image: url("../images/swirl_pattern.png");
   background-attachment: fixed;
-  background-size: cover;
   height: 100%;
   width: 100%;
 }
@@ -45,6 +43,7 @@ body {
   width: 80%;
   float: right;
   clear: right;
+  /*box-shadow: 1px 1px; fix box shadow*/
 }
 
 /* --- data buttons --- */
@@ -112,4 +111,5 @@ input.switch:checked + label:after
 
 input {
   display: block;
+  clear: left;
 }
