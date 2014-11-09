@@ -108,3 +108,5 @@ function toggleIcon(type){
 }
 
 })();
+
+$(window).resize(function() {$("#map").width($(".app-description").width()-250);});
