@@ -204,7 +204,7 @@ input {
   }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 760px) {
 
   .data-map{
     width: 100%;
