@@ -24,12 +24,12 @@
   var firePoints=[], parksPoints=[], policePoints=[], wifiPoints=[],
     fireMarkers=[], policeMarkers=[], wifiMarkers=[], parksMarkers=[];
   //set up the icons for the markers
-  var fireIcon = new L.Icon({iconUrl:'../images/firestation.png',
+  var fireIcon = new L.Icon({iconUrl:'../images/firestation-color.png',
                             iconSize:[45,45]}),
-      policeIcon = new L.Icon({iconUrl:'../images/policestation.png',
+      policeIcon = new L.Icon({iconUrl:'../images/policestation-color.png',
                               iconSize:[45,45]}),
-      wifiIcon = new L.Icon({iconUrl:'../images/wifi.png',iconSize:[45,45]}),
-      parksIcon = new L.Icon({iconUrl:'../images/park.png',iconSize:[45,45]});
+      wifiIcon = new L.Icon({iconUrl:'../images/wifi-color.png',iconSize:[45,45]}),
+      parksIcon = new L.Icon({iconUrl:'../images/park-color.png',iconSize:[45,45]});
 
   //create the layer for the map from MapQuest
   L.tileLayer( 'http://{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
