@@ -1,0 +1,108 @@
+[ {
+	name: "Anderson Lane Recycling Convenience Center", 
+	zip: "37115", 
+	number: 1, 
+	state: "TN", 
+	address: "939A Anderson Lane"
+},{
+	name: "East Recycling Convenience Center", 
+	zip: "37207", 
+	number: 2, 
+	state: "TN", 
+	address: "943A Doctor Richard G. Adams Drive"
+},{
+	name: "Omohundro Recycling Convenience Center",
+	zip: "37210",
+	number: 3,
+	state: "TN",
+	address: "1019 Omohundro Place (entrance on Freightliner Drive)"
+},{
+	name: "Bordeaux Mulch & Wood Recycling Convenience Center", 
+	zip: "37218", 
+	number: 4, 
+	state: "TN", 
+	address: "1400 County Hospital Road"
+},{
+	name: "**Joelton Middle School **Temporarily Closed due t…l construction** Relocated to Paradise Ridge Park", 
+	zip: "37080", 
+	number: 5, 
+	state: "TN", 
+	address: "3500 Old Clarksville Highway"
+},{
+	name: "Bellevue Metro Transit Authority's Park & Ride", 
+	zip: "37221", 
+	number: 6, 
+	state: "TN", 
+	address: "Coley Davis Road and Hwy 70 S"
+},{
+	name: "Bicentennial Mall Recycling Drop-off Point ",
+	zip: "37219",
+	number: 7,state: "TN",
+	address: "5th Avenue North & Jackson Street"
+},{
+	name: "Cane Ridge High School", 
+	zip: "37013", 
+	number: 8, 
+	state: "TN", 
+	address: "12848 Old Hickory Blvd";
+},{
+	name: "Granbery Elementary School",
+	zip: "37027",
+	number: 9,
+	state: "TN",
+	address: "5501 Hill Road"
+},{
+	name: "Hermitage Hobby Lobby",
+	zip: "37076",
+	number: 10,
+	state: "TN",
+	address: "4101 Lebanon Road"
+},{
+	name: "Hillsboro High School",
+	zip: "37215",
+	number: 11,
+	state: "TN",
+	address: "3812 Hillsboro Pike"
+},{
+	name: "Lakewood City Hall",
+	zip: "37138",
+	number: 12,
+	state: "TN",
+	address: "3401 Old Hickory Blvd"
+},{
+	name: "McGavock High School ",
+	zip: "37214",
+	number: 13,
+	state: "TN",
+	address: "3150 McGavock Pike"
+},{
+	name: "Old Ben West Library Building Recycling Drop-off Point",
+	zip: "37219",
+	number: 14,
+	state: "TN",
+	address: "Polk Avenue & Union Street"
+},{
+	name: "Paradise Ridge Park **Temporarily site for Joelton Middle School due to school construction**",
+	zip: "37080",
+	number: 15,
+	state: "TN",
+	address: "3000 Morgan Rd"
+},{
+	name: "Rivergate Recycling",
+	zip: "37115",
+	number: 16,
+	state: "TN",
+	address: "630 Myatt Drive"
+},{
+	name: "Tennessee State University",
+	zip: "37209",
+	number: 17,
+	state: "TN",
+	address: "38th Ave N and Albion Street "
+},{
+	name: "Whites Creek High School",
+	zip: "37189",
+	number: 18,
+	state: "TN",
+	address: "7277 Old Hickory Blvd"
+}]
