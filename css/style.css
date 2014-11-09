@@ -1,6 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Asset);
 
+#skyline{
+  left: 0;
+  top: 0;
+  width: 100%;
+
+}
+
 #title{
+  z-index: 100;
+  position: absolute;
+  left: 25%;
+  top: 25%;
   text-align: center;
   color: #0000CC;
   padding: 20px;
@@ -29,6 +40,7 @@
 body {
   background-image: url("../images/swirl_pattern.png");
   background-attachment: fixed;
+  background-color: #D8D8D8;
   height: 100%;
   width: 100%;
 }
