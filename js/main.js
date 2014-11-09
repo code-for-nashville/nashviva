@@ -12,7 +12,6 @@
 
   datasetButtons.forEach(function(dataset){
     $(dataset).click(function(){
-      console.log(this);
       //add toggle for showing icons on map
       toggleIcon($(this).attr('id'));
     });
