@@ -81,7 +81,7 @@ body {
 /* --- map --- */
 #map {
   height:500px;
-  width: 700px;
+  width: 80%;
   margin: 10px auto 20px 0;
   float: right;
 }
@@ -269,7 +269,6 @@ input {
 
   #map {
     height: 300px;
-    width: 400px;
     margin: 0 auto;
   }
 }
