@@ -38,22 +38,22 @@
 
 //Convert our JSON files into latitude longitude points in the "Points"
 //variables
-$.get('../firestation-cleaned.json',function(data){
+$.get('/firestation-cleaned.json',function(data){
   data.forEach(function(loc){
     firePoints.push([+loc.location[1],+loc.location[0]]);
   });
 });
-$.get('../police-cleaned.json',function(data){
+$.get('/police-cleaned.json',function(data){
   data.forEach(function(loc){
     policePoints.push([+loc.location[1],+loc.location[0]]);
   });
 });
-$.get('../hotspot-cleaned.json', function(data){
+$.get('/hotspot-cleaned.json', function(data){
   data.forEach(function(loc){
     wifiPoints.push([+loc.location[1],+loc.location[0]]);
   });
 });
-$.get('../parks-cleaned.json',function(data){
+$.get('/parks-cleaned.json',function(data){
   data.forEach(function(loc){
     parksPoints.push([+loc.location[0],+loc.location[1],loc.name]);
   });
