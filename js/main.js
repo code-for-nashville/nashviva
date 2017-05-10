@@ -17,7 +17,20 @@
     });
   });
 
-  var map = L.map('map').setView([36.165818, -86.784245], 13);
+
+/*
+  The boundaries for Nashville are
+  upper-left: [35.9758, -86.9815]
+  lower-right: [36.3350, -86.4542]
+
+  This center and zoom doesn't capture the entire box, but includes
+  all of the points in our datasets without a lot of blank space.
+*/
+  var map = L.map('map').setView(
+    // center and zoom
+    [36.165818, -86.784245], 12
+  )
+
   //varables for the map. points are latitude and longitude points
   //markers are leaflet markers
   var firePoints=[], parksPoints=[], policePoints=[], wifiPoints=[], communityPoints=[],
