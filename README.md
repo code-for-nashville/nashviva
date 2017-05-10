@@ -1,15 +1,15 @@
-NashViva - A digital pocketknife for life in Nashville
-========
+# NashViva!
+_A digital pocketknife for life in Nashville_
 
-NashViva is a website application that will pull data from Metro Nashville's open data portal to show residents or would-be residents a snapshot of the neighborhood they live in or are looking to move to. Allows the user to create a recipe of data and easily toggle through datasets. <br>
+NashViva uses data from Metro Nashville's open data portal to display where public services are located in Nashville.
 
-Could include such datasets as: <br>
+While this information is generally available throughout the [official Metro Nashville](https://www.nashville.gov/) site, this application serves provides a unique service by gathering them into one place.  We believe we can leverage this to offer unique features.
 
-Fire stations <br>
-Police precincts <br>
-MTA bus stops <br>
-Parks <br>
-Public wifi <br>
-Recycling center locations <br>
+## Running
+This site is all static JS/HTML/CSS, so you can use any "server in a box". For Python 3, you can use the built-in `python3 -m http.server`. For Node, check out [serve](https://www.npmjs.com/package/serve).
 
-[Nashviva website](http://nashviva.codefornashville.org)
+## Contributing
+Contributions are welcome! Check out the issues page to squash 🐛s, add features, and report issues or suggest enhancements.
+
+## License
+[MIT](LICENSE.md) @ Code for Nashville
