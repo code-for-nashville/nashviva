@@ -1,44 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Asset);
 
 * {
-  box-sizing: border-box; 
-  } 
+  box-sizing: border-box;
+  }
 
 li {
   list-style-type: none;
 }
 
-
-#skyline{
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-
-
-
-header {
-	position:relative;
-}
-
-.app-description {
-	/*text-align:center; */
-}
-
-#skyline img {
-  display: block;
-  max-width: 100%;
-  margin-right: 0;
-  margin-left: 0;
-}
-
 #title{
-  background: url("../images/swirl_pattern.png");
-  z-index: 100;
-  /*position: absolute;
-  left: 25%;
-  top: 160px; */
-  text-align: center;
   color: black;
   font-size: 350%;
   font-family: 'Asset', cursive;
@@ -67,14 +37,15 @@ body {
   background-attachment: fixed;
   height: 100%;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
 }
 
 /* --- main section --- */
-.data-cols {
+header, .data-cols {
   padding: 0 5%;
+}
+
+.data-cols {
   background: rgba(231,230,225,0.5);
 }
 
@@ -230,14 +201,14 @@ input {
     padding: 5px 0;
     cursor: pointer;
   }
-  
+
  .nav-btn:before {
    content: "Ammenities";
  }
 
 
  .data-toggle ul {
-    display: none;    
+    display: none;
     clear:both;
     position: relative;
     padding:0;
