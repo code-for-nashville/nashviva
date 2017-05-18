@@ -11,6 +11,7 @@
   var datasetButtons= ['#fire-station','#police-station','#wifi', '#parks','#community'];
 
   datasetButtons.forEach(function(dataset){
+    $(dataset).prop('disabled', true);
     $(dataset).click(function(){
       //add toggle for showing icons on map
       toggleIcon($(this).attr('id'));
@@ -49,33 +50,55 @@
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
 }).addTo( map );
 
-//Convert our JSON files into latitude longitude points in the "Points"
-//variables
-$.get('/datasets/community-centers-cleaned.json',function(data){
-  data.forEach(function(loc){
-    communityPoints.push([+loc.location[1],+loc.location[0]]);
+function processJSON(data, locationKey) {
+    return data.data.map(function(el) {
+      var lat = el[locationKey][1];
+      var long = el[locationKey][2];
+      var location = ["", ""];
+      if (lat !== null && long !== null) {
+        return [long, lat];
+      }
+      return location;
+    });
+  }
+
+  $.get('/datasets/community-centers-cleaned.json', function(data) {
+    data.forEach(function(loc) {
+      communityPoints.push([loc.location[1], loc.location[0]]);
+    });
+    $('#community').prop('disabled', false);
   });
-});
-$.get('/datasets/firestation-cleaned.json',function(data){
-  data.forEach(function(loc){
-    firePoints.push([+loc.location[1],+loc.location[0]]);
+  $.get('https://data.nashville.gov/api/views/frq9-a5iv/rows.json', function(data) {
+    var fireLocs = processJSON(data, 13);
+    fireLocs.forEach(function(loc) {
+      firePoints.push([loc[1], loc[0]]);
+    });
+    $('#fire-station').prop('disabled', false);
   });
-});
-$.get('/datasets/police-cleaned.json',function(data){
-  data.forEach(function(loc){
-    policePoints.push([+loc.location[1],+loc.location[0]]);
+
+  $.get('https://data.nashville.gov/api/views/y5ik-ut5s/rows.json', function(data) {
+    var policeLocs = processJSON(data, 17);
+    policeLocs.forEach(function(loc) {
+      policePoints.push([loc[1], loc[0]]);
+    });
+    $('#police-station').prop('disabled', false);
   });
-});
-$.get('/datasets/hotspot-cleaned.json', function(data){
-  data.forEach(function(loc){
-    wifiPoints.push([+loc.location[1],+loc.location[0]]);
+
+  $.get('https://data.nashville.gov/api/views/4ugp-s85t/rows.json', function(data) {
+    var wifiLocs = processJSON(data, 11);
+    wifiLocs.forEach(function(loc) {
+      wifiPoints.push([loc[1], loc[0]]);
+    });
+    $('#wifi').prop('disabled', false)
   });
-});
-$.get('/datasets/parks-cleaned.json',function(data){
-  data.forEach(function(loc){
-    parksPoints.push([+loc.location[0],+loc.location[1],loc.name]);
+
+  $.get('https://data.nashville.gov/api/views/74d7-b74t/rows.json', function(data) {
+    var parksLocs = processJSON(data, 42);
+    parksLocs.forEach(function(loc) {
+      parksPoints.push([loc[1], loc[0]]);
+    });
+    $('#parks').prop('disabled', false)
   });
-});
 
 function toggleIcon(type){
   //toggleIcon takes the type of markers we want to toggle
