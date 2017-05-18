@@ -9,35 +9,27 @@
           integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
           crossorigin=""
     />
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/switch.css" />
   </head>
   <body>
-    <header>
-        <div id='skyline'>
-          <img src='images/skyline.png'/>
-        </div>
-        <div id='title'>NashViva!</div>
-    </header>
-    <section class="data-cols cf">
+    <nav>
+      <header>
+          <h1 class='nashviva'>NashViva!</h1>
+          <h2>The Swiss Army Knife For Nashville Life</h2>
+      </header>
       <div class="app-description">
-        <h2>The Swiss Army Knife For Nashville Life</h2>
         <p>Click on the switches below to see your snapshot of Nashville's amenities</p>
       </div>
-      <span class="nav-btn"></span>
-      <div class="data-toggle">
-        <ul id='data-toggles'></ul>
-      </div>
-
-        <div class="data-map">
-          <div id="map"></div>
-      </div>
-    </section>
+      <ul id='data-toggles'></ul>
+    </nav>
+    <div id="map"></div>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
   <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"
           integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg=="
           crossorigin="">
   </script>
   <script src="js/main.js" type="text/javascript"></script>
-  <script src="js/mobile-nav.js" type="text/javascript"></script>
   </body>
 </html>
