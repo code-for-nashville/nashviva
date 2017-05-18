@@ -4,13 +4,7 @@
 
   function initialize() {}
 
-  var datasetButtons = [
-    "#fire-station",
-    "#police-station",
-    "#wifi",
-    "#parks",
-    "#community"
-  ];
+  var datasetButtons = ["#fire-station", "#police-station", "#wifi", "#parks", "#community"];
 
   datasetButtons.forEach(function(dataset){
     $(dataset).prop('disabled', true);
@@ -37,36 +31,36 @@
   //varables for the map. points are latitude and longitude points
   //markers are leaflet markers
   var firePoints = [],
-    parksPoints = [],
-    policePoints = [],
-    wifiPoints = [],
-    communityPoints = [],
-    fireMarkers = [],
-    policeMarkers = [],
-    wifiMarkers = [],
-    parksMarkers = [],
-    communityMarkers = [];
+      parksPoints = [],
+      policePoints = [],
+      wifiPoints = [],
+      communityPoints = [],
+      fireMarkers = [],
+      policeMarkers = [],
+      wifiMarkers = [],
+      parksMarkers = [],
+      communityMarkers = [];
   //set up the icons for the markers
   var fireIcon = new L.Icon({
-    iconUrl: "../images/firestation-color.png",
-    iconSize: [45, 45]
-  }),
-    policeIcon = new L.Icon({
-      iconUrl: "../images/policestation-color.png",
-      iconSize: [45, 45]
-    }),
-    wifiIcon = new L.Icon({
-      iconUrl: "../images/wifi-color.png",
-      iconSize: [45, 45]
-    }),
-    parksIcon = new L.Icon({
-      iconUrl: "../images/park-color.png",
-      iconSize: [45, 45]
-    }),
-    communityIcon = new L.Icon({
-      iconUrl: "../images/home-color.png",
-      iconSize: [45, 45]
-    });
+        iconUrl: "../images/firestation-color.png",
+        iconSize: [45, 45]
+      }),
+      policeIcon = new L.Icon({
+        iconUrl: "../images/policestation-color.png",
+        iconSize: [45, 45]
+      }),
+      wifiIcon = new L.Icon({
+        iconUrl: "../images/wifi-color.png",
+        iconSize: [45, 45]
+      }),
+      parksIcon = new L.Icon({
+        iconUrl: "../images/park-color.png",
+        iconSize: [45, 45]
+      }),
+      communityIcon = new L.Icon({
+        iconUrl: "../images/home-color.png",
+        iconSize: [45, 45]
+      });
 
   //create the layer for the map from MapQuest
   L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
@@ -91,6 +85,7 @@
     });
     $('#community').prop('disabled', false);
   });
+
   $.get('https://data.nashville.gov/api/views/frq9-a5iv/rows.json', function(data) {
     var fireLocs = processJSON(data, 13);
     fireLocs.forEach(function(loc) {
@@ -141,7 +136,6 @@
         setMarkersFor(parksPoints, parksMarkers, parksIcon);
         break;
       case "community":
-        console.log({ communityPoints });
         setMarkersFor(communityPoints, communityMarkers, communityIcon);
     }
     function setMarkersFor(points, markers, icon) {
