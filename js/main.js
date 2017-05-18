@@ -12,8 +12,9 @@
     "#community"
   ];
 
-  datasetButtons.forEach(function(dataset) {
-    $(dataset).click(function() {
+  datasetButtons.forEach(function(dataset){
+    $(dataset).prop('disabled', true);
+    $(dataset).click(function(){
       //add toggle for showing icons on map
       toggleIcon($(this).attr("id"));
     });
@@ -84,65 +85,42 @@
     });
   }
 
-  //Convert our JSON files into latitude longitude points in the "Points"
-  //variables
-  //   fire: getJson.bind(null, 'https://data.nashville.gov/api/views/frq9-a5iv/rows.json'),
-  //   parks: getJson.bind(null, 'https://data.nashville.gov/api/views/74d7-b74t/rows.json'),
-  //   hotspots: getJson.bind(null, 'https://data.nashville.gov/api/views/4ugp-s85t/rows.json'),
-  //   community : getJson.bind(null, 'datasets/community-centers-cleaned.json'),
-  //   police: getJson.bind(null, 'https://data.nashville.gov/api/views/y5ik-ut5s/rows.json')
-  // case "fire":
-  //                               markPoints = processJSON(data, 13, 9);
-  //                               break;
-  //                           case "police":
-  //                               markPoints = processJSON(data, 16, 8);
-  //                               break;
-  //                           case "parks":
-  //                               markPoints = processJSON(data, 41, 8);
-  //                               break;
-  //                           case "hotspots":
-  //                               markPoints = processJSON(data, 11, 8);
-  //                               break;
-  var markPoints;
-  $.get("/datasets/community-centers-cleaned.json", function(data) {
+  $.get('/datasets/community-centers-cleaned.json', function(data) {
     data.forEach(function(loc) {
       communityPoints.push([loc.location[1], loc.location[0]]);
     });
+    $('#community').prop('disabled', false);
   });
-  $.get("https://data.nashville.gov/api/views/frq9-a5iv/rows.json", function(
-    data
-  ) {
-    markPoints = processJSON(data, 13);
-    markPoints.forEach(function(loc) {
+  $.get('https://data.nashville.gov/api/views/frq9-a5iv/rows.json', function(data) {
+    var fireLocs = processJSON(data, 13);
+    fireLocs.forEach(function(loc) {
       firePoints.push([loc[1], loc[0]]);
     });
+    $('#fire-station').prop('disabled', false);
   });
-  $.get("https://data.nashville.gov/api/views/y5ik-ut5s/rows.json", function(
-    data
-  ) {
-    markPoints = processJSON(data, 17);
-    markPoints.forEach(function(loc) {
+
+  $.get('https://data.nashville.gov/api/views/y5ik-ut5s/rows.json', function(data) {
+    var policeLocs = processJSON(data, 17);
+    policeLocs.forEach(function(loc) {
       policePoints.push([loc[1], loc[0]]);
     });
+    $('#police-station').prop('disabled', false);
   });
-  $.get("https://data.nashville.gov/api/views/4ugp-s85t/rows.json", function(
-    data
-  ) {
-    markPoints = processJSON(data, 11);
-    markPoints.forEach(function(loc) {
+
+  $.get('https://data.nashville.gov/api/views/4ugp-s85t/rows.json', function(data) {
+    var wifiLocs = processJSON(data, 11);
+    wifiLocs.forEach(function(loc) {
       wifiPoints.push([loc[1], loc[0]]);
     });
+    $('#wifi').prop('disabled', false);
   });
-  $.get("https://data.nashville.gov/api/views/74d7-b74t/rows.json", function(
-    data
-  ) {
-    console.log({ data });
-    markPoints = processJSON(data, 42);
-    console.log(markPoints);
-    markPoints.forEach(function(loc) {
+
+  $.get('https://data.nashville.gov/api/views/74d7-b74t/rows.json', function(data) {
+    var parksLocs = processJSON(data, 42);
+    parksLocs.forEach(function(loc) {
       parksPoints.push([loc[1], loc[0]]);
     });
-    console.log({ parksPoints });
+    $('#parks').prop('disabled', false);
   });
 
   function toggleIcon(type) {
