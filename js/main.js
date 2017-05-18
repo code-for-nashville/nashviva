@@ -126,8 +126,4 @@ $(document).ready(function() {
       input.prop('disabled', false)
     })
   })
-
-  $(window).resize(function() {
-    $('#map').width($('.app-description').width() - 250)
-  })
 })
