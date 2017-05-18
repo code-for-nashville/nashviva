@@ -1,16 +1,16 @@
 (function() {
-  "use strict";
+  'use strict';
   $(document).ready(initialize);
 
   function initialize() {}
 
-  var datasetButtons = ["#fire-station", "#police-station", "#wifi", "#parks", "#community"];
+  var datasetButtons = ['#fire-station', '#police-station', '#wifi', '#parks', '#community'];
 
   datasetButtons.forEach(function(dataset){
     $(dataset).prop('disabled', true);
     $(dataset).click(function(){
       //add toggle for showing icons on map
-      toggleIcon($(this).attr("id"));
+      toggleIcon($(this).attr('id'));
     });
   });
 
@@ -22,7 +22,7 @@
   This center and zoom doesn't capture the entire box, but includes
   all of the points in our datasets without a lot of blank space.
 */
-  var map = L.map("map").setView(
+  var map = L.map('map').setView(
     // center and zoom
     [36.165818, -86.784245],
     12
@@ -42,28 +42,28 @@
       communityMarkers = [];
   //set up the icons for the markers
   var fireIcon = new L.Icon({
-        iconUrl: "../images/firestation-color.png",
+        iconUrl: '../images/firestation-color.png',
         iconSize: [45, 45]
       }),
       policeIcon = new L.Icon({
-        iconUrl: "../images/policestation-color.png",
+        iconUrl: '../images/policestation-color.png',
         iconSize: [45, 45]
       }),
       wifiIcon = new L.Icon({
-        iconUrl: "../images/wifi-color.png",
+        iconUrl: '../images/wifi-color.png',
         iconSize: [45, 45]
       }),
       parksIcon = new L.Icon({
-        iconUrl: "../images/park-color.png",
+        iconUrl: '../images/park-color.png',
         iconSize: [45, 45]
       }),
       communityIcon = new L.Icon({
-        iconUrl: "../images/home-color.png",
+        iconUrl: '../images/home-color.png',
         iconSize: [45, 45]
       });
 
   //create the layer for the map from MapQuest
-  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
@@ -71,7 +71,7 @@
     return data.data.map(function(el) {
       var lat = el[locationKey][1];
       var long = el[locationKey][2];
-      var location = ["", ""];
+      var location = ['', ''];
       if (lat !== null && long !== null) {
         return [long, lat];
       }
@@ -123,19 +123,19 @@
     //and creates the markers if they don't exist and toggles
     //whether they are showing or not
     switch (type) {
-      case "fire-station":
+      case 'fire-station':
         setMarkersFor(firePoints, fireMarkers, fireIcon);
         break;
-      case "police-station":
+      case 'police-station':
         setMarkersFor(policePoints, policeMarkers, policeIcon);
         break;
-      case "wifi":
+      case 'wifi':
         setMarkersFor(wifiPoints, wifiMarkers, wifiIcon);
         break;
-      case "parks":
+      case 'parks':
         setMarkersFor(parksPoints, parksMarkers, parksIcon);
         break;
-      case "community":
+      case 'community':
         setMarkersFor(communityPoints, communityMarkers, communityIcon);
     }
     function setMarkersFor(points, markers, icon) {
@@ -147,7 +147,7 @@
           //the markers array
           var mark = L.marker(el.slice(0, 2), { icon: icon });
           if (el[2]) {
-            mark.bindPopup("<p>" + el[2] + "</p>");
+            mark.bindPopup('<p>' + el[2] + '</p>');
           }
           markers.push(mark.addTo(map));
         });
@@ -165,5 +165,5 @@
 })();
 
 $(window).resize(function() {
-  $("#map").width($(".app-description").width() - 250);
+  $('#map').width($('.app-description').width() - 250);
 });
