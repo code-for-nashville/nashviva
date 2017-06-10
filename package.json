@@ -18,6 +18,7 @@
   "homepage": "https://github.com/code-for-nashville/nashviva#readme",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "husky": "^0.13.4",
     "snazzy": "^7.0.0",
     "standard": "^10.0.2"
   },
