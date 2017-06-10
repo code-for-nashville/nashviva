@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "standard --verbose | snazzy",
     "fixcode": "standard --fix",
-    "precommit": "if [ -d 'ignite-base' ]; then cd ignite-base; fi; npm run lint"
+    "precommit": "npm run lint"
   },
   "repository": {
     "type": "git",
