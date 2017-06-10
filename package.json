@@ -1,0 +1,32 @@
+{
+  "name": "nashviva",
+  "version": "1.0.0",
+  "description": "A digital pocketknife for life in Nashville",
+  "scripts": {
+    "lint": "standard --verbose | snazzy",
+    "fixcode": "standard --fix",
+    "precommit": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-for-nashville/nashviva.git"
+  },
+  "author": "Code For Nashville",
+  "bugs": {
+    "url": "https://github.com/code-for-nashville/nashviva/issues"
+  },
+  "homepage": "https://github.com/code-for-nashville/nashviva#readme",
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "husky": "^0.13.4",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.2"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "$",
+      "L"
+    ]
+  }
+}

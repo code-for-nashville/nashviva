@@ -39,8 +39,8 @@ const datasets = [
   }
 ]
 
-function processJSON(data, locationKey) {
-  return data.data.map(function(el) {
+function processJSON (data, locationKey) {
+  return data.data.map(function (el) {
     var lat = el[locationKey][1]
     var long = el[locationKey][2]
     var location = ['', '']
@@ -51,11 +51,11 @@ function processJSON(data, locationKey) {
   })
 }
 
-function setMarkersFor(map, points, markers, icon) {
+function setMarkersFor (map, points, markers, icon) {
   // set markers makes the array of leaflet markers if
   // they do not exist
   if (!markers[0]) {
-    points.forEach(function(el) {
+    points.forEach(function (el) {
       // for each point, make a new marker and push it into
       // the markers array
       var mark = L.marker(el.slice(0, 2), { icon: icon })
@@ -70,8 +70,7 @@ function setMarkersFor(map, points, markers, icon) {
     markers.forEach(el => {
       if (el.options.opacity === 0) {
         el.setOpacity(1)
-      }
-      else {
+      } else {
         el.setOpacity(0)
       }
       el.closePopup()
@@ -79,7 +78,7 @@ function setMarkersFor(map, points, markers, icon) {
   }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   /*
     The boundaries for Nashville are
     upper-left: [35.9758, -86.9815]
@@ -93,10 +92,10 @@ $(document).ready(function() {
     12
   )
 
-  //create the layer for the map from MapQuest
+  // create the layer for the map from MapQuest
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo( map )
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map)
 
   const toggleList = document.getElementById('data-toggles')
   datasets.forEach(dataset => {
