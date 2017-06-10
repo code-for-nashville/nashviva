@@ -5,7 +5,8 @@
   "scripts": {
     "lint": "standard --verbose | snazzy",
     "fixcode": "standard --fix",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
