@@ -26,7 +26,7 @@ const datasets = [
   {
     icon: 'wifi',
     markers: [],
-    index: 11,
+    index: 14,
     name: 'WiFi',
     url: 'https://data.nashville.gov/api/views/4ugp-s85t/rows.json'
   },
