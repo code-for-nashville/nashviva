@@ -86,8 +86,8 @@ $(document).ready(function () {
     This center and zoom doesn't capture the entire box, but includes
     all of the points in our datasets without a lot of blank space.
   */
-  const map = L.map('map',{
-    "zoomControl":false
+  const map = L.map('map', {
+    'zoomControl': false
   }).setView(
     // center and zoom
     [36.165818, -86.784245],
@@ -100,8 +100,8 @@ $(document).ready(function () {
     when the nav is visible.
   */
   L.control.zoom({
-    "position":"topright"
-  }).addTo(map);
+    'position': 'topright'
+  }).addTo(map)
 
   // create the layer for the map from MapQuest
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -136,13 +136,13 @@ $(document).ready(function () {
       input.prop('disabled', false)
     })
   })
-  $('#navbtn').on("click", function(){
-    var navbarEl = $("nav");
-    navbarEl.toggle();
-    if (navbarEl.is(":visible")) {
-      $(this).text("Hide Nav");
+  $('#navbtn').on('click', function () {
+    let navbarEl = $('nav')
+    navbarEl.toggle()
+    if (navbarEl.is(':visible')) {
+      $(this).text('Hide Nav')
     } else {
-      $(this).text("Show Nav");
+      $(this).text('Show Nav')
     }
   })
 })
