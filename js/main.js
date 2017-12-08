@@ -26,7 +26,7 @@ const datasets = [
   {
     icon: 'wifi',
     markers: [],
-    index: 14,
+    index: 11,
     name: 'WiFi',
     url: 'https://data.nashville.gov/api/views/4ugp-s85t/rows.json'
   },
@@ -86,11 +86,22 @@ $(document).ready(function () {
     This center and zoom doesn't capture the entire box, but includes
     all of the points in our datasets without a lot of blank space.
   */
-  const map = L.map('map').setView(
+  const map = L.map('map', {
+    'zoomControl': false
+  }).setView(
     // center and zoom
     [36.165818, -86.784245],
     12
   )
+
+  /*
+    The nav is overlayed on top of the map so the
+    zoom buttons get in the way if they're on the top left
+    when the nav is visible.
+  */
+  L.control.zoom({
+    'position': 'topright'
+  }).addTo(map)
 
   // create the layer for the map from MapQuest
   L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -124,5 +135,14 @@ $(document).ready(function () {
       input.click(() => setMarkersFor(map, points, dataset.markers, icon))
       input.prop('disabled', false)
     })
+  })
+  $('#navbtn').on('click', function () {
+    let navbarEl = $('nav')
+    navbarEl.toggle()
+    if (navbarEl.is(':visible')) {
+      $(this).text('Hide Nav')
+    } else {
+      $(this).text('Show Nav')
+    }
   })
 })
