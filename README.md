@@ -11,5 +11,8 @@ This site is all static JS/HTML/CSS, so you can use any "server in a box". For P
 ## Contributing
 Contributions are welcome! Check out the issues page to squash 🐛s, add features, and report issues or suggest enhancements.
 
+## Deployment
+This repository is configured to serve the site using Github Pages right off the master branch. You should be able to see your changes a minute or two after it is merged to master ✨!
+
 ## License
 [MIT](LICENSE.md) @ Code for Nashville
