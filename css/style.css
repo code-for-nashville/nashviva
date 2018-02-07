@@ -32,7 +32,7 @@ h2 {
 
 
 body {
-  background: rgba(231, 230, 225, 1);
+  background: rgb(231, 230, 225);
   display: flex;
   flex-direction: row;
   font-family: 'Open Sans', sans-serif;
@@ -47,7 +47,7 @@ body {
 }
 
 nav {
-  background-color: rgba(231, 230, 225, 1);
+  background-color: rgb(231, 230, 225);
   height: 100vh;
   padding: 5px 15px;
   width: 250px;
@@ -92,5 +92,11 @@ nav ul {
     strange
     */
     width: 175px;
+  }
+}
+
+@media (max-width: 450px) {
+  nav {
+    background-color: rgba(231, 230, 225, 0.7);
   }
 }
