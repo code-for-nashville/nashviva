@@ -95,6 +95,8 @@ nav ul {
   }
 }
 
+/* sets a lower opacity to the nav background when viewport
+   is mobile sized  */
 @media (max-width: 450px) {
   nav {
     background-color: rgba(231, 230, 225, 0.7);
