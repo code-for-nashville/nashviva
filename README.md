@@ -1,6 +1,8 @@
 # NashViva!
 _A digital pocketknife for life in Nashville_
 
+__Note: NashViva has been deprecated in favor of [NashView](https://nashview.nashville.gov/) and is no longer actively maintained.__
+
 NashViva uses data from Metro Nashville's open data portal to display where public services are located in Nashville.
 
 While this information is generally available throughout the [official Metro Nashville](https://www.nashville.gov/) site, this application serves provides a unique service by gathering them into one place.  We believe we can leverage this to offer unique features.
