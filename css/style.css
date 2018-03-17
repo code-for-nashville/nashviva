@@ -79,6 +79,14 @@ nav ul {
 	box-shadow: inset 0 0.2em 0 rgba(0,0,0,0.3);
 }
 
+#deprecation-notice {
+  background-color: lightgrey;
+  border: solid darkred 3px;
+  color: darkred;
+  font-style: italic;
+  padding: 5px;
+}
+
 /* Utility to hide things when small, also shrink sidebar */
 @media screen and (max-width: 600px) {
   h1 {
